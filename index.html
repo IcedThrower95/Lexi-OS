@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexi OS</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/apps/calculator/calculator.css">
+    <link rel="stylesheet" href="./src/apps/aboutme/aboutme.css">
+    <link rel="stylesheet" href="./src/apps/music/music.css">
+</head>
+<body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <h1 class="lexi-text">LEXI OS</h1>
+        <p class="os-text">SYSTEM INITIATING...</p>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop">
+        
+        <!-- Dock -->
+        <div class="dock">
+            
+            <div class="app-container">
+                <div class="dock-app app-navy" data-action="browser">
+                    <img src="./public/assets/icons/browser.svg" alt="Browser">
+                </div>
+                <span class="app-label">Browser</span>
+            </div>
+
+            <div class="app-container">
+                <div class="dock-app app-teal" data-action="music">
+                    <img src="./public/assets/icons/music.svg" alt="Wallpapers">
+                </div>
+                <span class="app-label">Music</span>
+            </div>
+
+            <div class="app-container">
+                <div class="dock-app app-blue" data-action="wallpapers">
+                    <img src="./public/assets/icons/weather.svg" alt="Wallpapers">
+                </div>
+                <span class="app-label">Wallpapers</span>
+            </div>
+            
+            <div class="app-container">
+                <div class="dock-app app-teal" data-action="calculator">
+                    <img src="./public/assets/icons/calculator.svg" alt="Calculator">
+                </div>
+                <span class="app-label">Calculator</span>
+            </div>
+
+            <div class="app-container">
+                <div class="dock-app app-navy" data-action="settings">
+                    <img src="./public/assets/icons/settings.svg" alt="Settings">
+                </div>
+                <span class="app-label">Settings</span>
+            </div>
+
+            <div class="app-container">
+                <div class="dock-app app-navy" data-action="aboutme">
+                    <img src="./public/assets/icons/app-store.svg" alt="About Me">
+                </div>
+                <span class="app-label">About Me</span>
+            </div>
+
+            <div class="dock-divider"></div>
+            <div class="dock-clock" id="dock-time">--:--</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="./src/js/script.js"></script>
+    <script src="./src/apps/calculator/calculator.js"></script>
+    <script src="./src/apps/aboutme/aboutme.js"></script>
+    <script src="./src/apps/music/music.js"></script>
+</body>
+</html>
