@@ -146,6 +146,10 @@ document.querySelectorAll('.dock-app').forEach(app => {
             spawnWindow('Wallpapers', getWallpapersHTML(), '900px');
         } else if (action === 'translator') {
             spawnWindow('Translator', getTranslatorHTML(), '600px');
+        } else if (action === 'currencyconverter') {
+            spawnWindow('Currency Converter', getCurrencyHTML(), '600px');
+        } else if (action === 'translator') {
+            spawnWindow('Translator', getTranslatorHTML(), '600px');
         }
     });
 });

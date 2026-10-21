@@ -1,0 +1,83 @@
+.window:has(.currency-wrapper) {
+    background: rgba(0, 0, 0, 0.2) !important; 
+    backdrop-filter: blur(2px) saturate(180%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.4) !important;
+}
+
+.currency-wrapper {
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; height: 100%; 
+    padding: 10px 5px;
+}
+.currency-header-text {
+    text-align: center; 
+    color: #8da9c4; font-size: 12px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+.currency-container {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px;
+}
+.currency-row {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 15px;
+}
+.currency-input {
+    flex-grow: 1; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    color: #fff; 
+    font-size: 32px; 
+    font-weight: 700; font-family: 'SF Pro Display', monospace; 
+    outline: none; 
+    width: 50%; 
+    padding-bottom: 5px; 
+    transition: border 0.2s;
+}
+.currency-input:focus { 
+    border-color: #00d5ff; 
+}
+.currency-output {
+    flex-grow: 1; 
+    color: #00d5ff; 
+    font-size: 32px; 
+    font-weight: 700; 
+    font-family: 'SF Pro Display', monospace; 
+    width: 50%; 
+    text-shadow: 0 0 15px rgba(0, 213, 255, 0.3);
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+.currency-select {
+    background: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255,255,255,0.2); 
+    color: #fff;
+    padding: 10px 15px; 
+    border-radius: 12px; 
+    outline: none; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 14px;
+}
+.currency-divider {
+    text-align: center; 
+    color: #8da9c4; 
+    font-size: 20px;
+}
+.currency-rate-text {
+    text-align: center; 
+    color: #8da9c4; 
+    font-size: 11px; 
+    margin-top: auto;
+}

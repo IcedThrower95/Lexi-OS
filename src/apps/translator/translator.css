@@ -1,7 +1,7 @@
 .window:has(.translate-wrapper) {
-    background: rgba(12, 18, 30, 0.75) !important; 
-    backdrop-filter: blur(40px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(0, 0, 0, 0.2) !important; 
+    backdrop-filter: blur(2px) saturate(180%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.4) !important;
 }
 
 .translate-wrapper {
@@ -18,7 +18,7 @@
     padding-bottom: 5px;
 }
 .translate-lang {
-    background: rgba(0, 0, 0, 0.4); 
+    background: transparent;
     border: 1px solid rgba(255,255,255,0.2); 
     color: #fff;
     padding: 8px 12px; 
@@ -38,7 +38,7 @@
 }
 .translate-box {
     flex-grow: 1; 
-    background: rgba(0, 0, 0, 0.3); 
+    background:transparent;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px; 
     color: #e0e1dd; 

@@ -1,4 +1,4 @@
-function getTranslateHTML() {
+function getTranslatorHTML() {
     return `
         <div class="translate-wrapper">
             <div class="translate-controls">

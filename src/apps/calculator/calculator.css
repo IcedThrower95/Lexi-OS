@@ -1,6 +1,6 @@
 .window:has(.calc-wrapper) {
     background: rgba(0, 0, 0, 0.2) !important; 
-    backdrop-filter: none !important;
+    backdrop-filter: blur(2px) saturate(180%) !important;
     -webkit-backdrop-filter: none !important;
     border: rgba(0, 0, 0, 0.918)!important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; 
