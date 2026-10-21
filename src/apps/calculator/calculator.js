@@ -1,12 +1,9 @@
-// src/apps/calculator.js
-
 function getCalculatorHTML() {
     return `
         <div class="calc-wrapper">
             <!-- Changed ID to Class -->
             <input type="text" class="calc-display" value="" readonly>
             <div class="calc-grid">
-                <!-- Added 'this' to every onclick -->
                 <button class="calc-btn calc-action" onclick="calcClear(this)">C</button>
                 <button class="calc-btn calc-action" onclick="calcDelete(this)">⌫</button>
                 <button class="calc-btn calc-action" onclick="calcClick(this, '%')">%</button>
@@ -33,22 +30,20 @@ function getCalculatorHTML() {
                 <button class="calc-btn calc-equal" onclick="calcEqual(this)">=</button>
             </div>
         </div>
-    `;
-}
+    `;}
 
-// Logic Functions now isolate the specific window using 'btn'
+
 function getDisplay(btn) {
-    return btn.closest('.calc-wrapper').querySelector('.calc-display');
-}
+    return btn.closest('.calc-wrapper').querySelector('.calc-display');}
 
-function calcClick(btn, value) {
+    function calcClick(btn, value) {
     const display = getDisplay(btn);
     if (display && display.value !== "Error") {
         display.value += value;
-    } else if (display) {
-        display.value = value;
+    } 
+    else if (display) {
+        display.value = value;}
     }
-}
 
 function calcClear(btn) {
     const display = getDisplay(btn);
@@ -58,8 +53,7 @@ function calcClear(btn) {
 function calcDelete(btn) {
     const display = getDisplay(btn);
     if (display && display.value !== "Error") {
-        display.value = display.value.slice(0, -1);
-    }
+        display.value = display.value.slice(0, -1);}
 }
 
 function calcEqual(btn) {
@@ -67,8 +61,6 @@ function calcEqual(btn) {
     if (display) {
         try {
             display.value = eval(display.value);
-        } catch {
+        } catch (e) {
             display.value = "Error";
-        }
-    }
-}
+        }}}

@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="./src/apps/calculator/calculator.css">
     <link rel="stylesheet" href="./src/apps/aboutme/aboutme.css">
     <link rel="stylesheet" href="./src/apps/music/music.css">
+    <link rel="stylesheet" href="./src/apps/finance/finance.css">
+    <link rel="stylesheet" href="./src/apps/notes/notes.css">
+    <link rel="stylesheet" href="./src/apps/wallpapers/wallpaper.css">
+    <link rel="stylesheet" href="./src/apps/translator/translator.css">
 </head>
 <body>
 
-    <!-- Boot Screen -->
     <div id="boot-screen">
         <h1 class="lexi-text">LEXI OS</h1>
         <p class="os-text">SYSTEM INITIATING...</p>
     </div>
 
-    <!-- Desktop Environment -->
+
     <div id="desktop">
         
-        <!-- Dock -->
+
         <div class="dock">
             
             <div class="app-container">
@@ -52,10 +55,17 @@
             </div>
 
             <div class="app-container">
-                <div class="dock-app app-navy" data-action="settings">
-                    <img src="./public/assets/icons/settings.svg" alt="Settings">
+                <div class="dock-app app-navy" data-action="tra">
+                    <img src="./public/assets/icons/settings.svg" alt="tra">
                 </div>
                 <span class="app-label">Settings</span>
+            </div>
+
+           <div class="app-container">
+                <div class="dock-app app-teal" data-action="notes">
+                    <img src="./public/assets/icons/calculator.svg" alt="Notes">
+                </div>
+                <span class="app-label">Notes</span>
             </div>
 
             <div class="app-container">
@@ -71,10 +81,17 @@
 
     </div>
 
-    <!-- JavaScript files -->
     <script src="./src/js/script.js"></script>
     <script src="./src/apps/calculator/calculator.js"></script>
     <script src="./src/apps/aboutme/aboutme.js"></script>
     <script src="./src/apps/music/music.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/apps/finance/finance.js"></script>
+    <script src="./src/apps/notes/notes.js"></script>
+    <script src="./src/apps/wallpapers/wallpapers.js"></script>
+    <script src="./src/apps/translator/translator.js"></script>
+    
 </body>
 </html>

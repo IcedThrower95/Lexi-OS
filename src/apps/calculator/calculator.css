@@ -6,13 +6,11 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; 
 }
 
-/* 2. This makes the header (top bar) clear */
 .window:has(.calc-wrapper) .window-header {
     background: transparent !important;
     border-bottom: none !important;
 }
 
-/* 3. The Wrapper */
 .calc-wrapper {
     display: flex;
     flex-direction: column;
@@ -82,9 +80,7 @@
 .calc-action:hover {
     background: transparent
 }
-
 .calc-equal {
-    /* Lexi OS deep blue/teal gradient */
     background: linear-gradient(135deg, #20a4f3 0%, #0b72b8 100%);
     color: white;
     border: none;

@@ -1,4 +1,3 @@
-// 1. BOOT SCREEN LOGIC
 window.addEventListener('load', () => {
     const bootScreen = document.getElementById('boot-screen');
     setTimeout(() => {
@@ -7,7 +6,7 @@ window.addEventListener('load', () => {
     }, 2000); 
 });
 
-// 2. CLOCK LOGIC
+
 function updateClock() {
     const now = new Date();
     let hours = now.getHours();
@@ -20,11 +19,11 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// 3. WINDOW SPAWNING & DRAGGING LOGIC
+
 let highestZIndex = 10; 
 let windowCount = 0;    
 
-// Add customWidth as a parameter with a default fallback of 550px
+
 function spawnWindow(appName, appContent, customWidth = '550px') {
     windowCount++;
     highestZIndex++;
@@ -35,7 +34,7 @@ function spawnWindow(appName, appContent, customWidth = '550px') {
     win.id = winId;
     win.style.zIndex = highestZIndex;
     
-    // Apply the custom width here
+
     win.style.width = customWidth;
     
     const offset = Math.floor(Math.random() * 40) - 20;
@@ -85,26 +84,11 @@ function spawnWindow(appName, appContent, customWidth = '550px') {
     makeDraggable(win);
 }
 
-// 4. WALLPAPERS APP LOGIC
+
 function setWallpaper(url) {
-    // Targets the body background directly
     document.body.style.backgroundImage = `url('${url}')`;
 }
 
-function openWallpapers() {
-    // Generates a grid of images using relative paths for your local setup
-    const wallpapersHTML = `
-        <div class="wallpaper-grid">
-            <div class="wallpaper-thumb" style="background-image: url('./public/assets/wallpapers/wall1.jpg')" onclick="setWallpaper('./public/assets/wallpapers/wall1.jpg')"></div>
-            <div class="wallpaper-thumb" style="background-image: url('./public/assets/wallpapers/wall2.jpg')" onclick="setWallpaper('./public/assets/wallpapers/wall2.jpg')"></div>
-            <div class="wallpaper-thumb" style="background-image: url('./public/assets/wallpapers/wall3.avif')" onclick="setWallpaper('./public/assets/wallpapers/wall3.avif')"></div>
-            <div class="wallpaper-thumb" style="background-image: url('./public/assets/wallpapers/wall4.jpg')" onclick="setWallpaper('./public/assets/wallpapers/wall4.jpg')"></div>
-        </div>
-    `;
-    spawnWindow('Wallpapers', wallpapersHTML);
-}
-
-// 5. WINDOW DRAG FUNCTION
 function makeDraggable(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     var header = document.getElementById(elmnt.id + "-header");
@@ -117,7 +101,6 @@ function makeDraggable(elmnt) {
 
     function dragMouseDown(e) {
         e = e || window.event;
-        // Don't trigger drag if clicking a window control dot
         if (e.target.classList.contains("control-dot")) return; 
         e.preventDefault();
         pos3 = e.clientX;
@@ -143,17 +126,13 @@ function makeDraggable(elmnt) {
     }
 }
 
-// 6. DOCK EVENT LISTENERS
 document.querySelectorAll('.dock-app').forEach(app => {
     app.addEventListener('click', () => {
         const action = app.getAttribute('data-action');
         
         if (action === 'browser') {
             spawnWindow('Browser', 'Opening browser instance...');
-        } else if (action === 'wallpapers') {
-            openWallpapers();
         } else if (action === 'calculator') {
-            // Note: 320px width keeps the calculator grid tight and proportional
             spawnWindow('Calculator', getCalculatorHTML(), '320px');
         } else if (action === 'settings') {
             spawnWindow('Settings', 'System Preferences loaded.');
@@ -161,6 +140,12 @@ document.querySelectorAll('.dock-app').forEach(app => {
             spawnWindow('About Me', getAboutMeHTML(), '600px');
         } else if (action === 'music') {
             spawnWindow('Music', getMusicHTML(), '400px');
+        } else if (action === 'notes') {
+            spawnWindow('Notes', getNotesHTML(), '800px');
+        } else if (action === 'wallpapers') {
+            spawnWindow('Wallpapers', getWallpapersHTML(), '900px');
+        } else if (action === 'translator') {
+            spawnWindow('Translator', getTranslatorHTML(), '600px');
         }
     });
 });

@@ -1,0 +1,99 @@
+.window:has(.notes-wrapper) {
+    background: transparent !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.window:has(.notes-wrapper) .window-header {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+.notes-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    padding: 5px; 
+}
+
+.notes-toolbar { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    padding-bottom: 10px; 
+}
+.notes-add-btn {
+    background: rgba(0, 213, 255, 0.2); 
+    border: 1px solid #00d5ff; 
+    color: #00d5ff;
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 12px; 
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+.notes-add-btn:hover { 
+    background: rgba(0, 213, 255, 0.4); 
+}
+.notes-canvas {
+    flex-grow: 1; 
+    background: transparent; 
+    border: none; 
+    position: relative;
+    overflow: hidden;
+}
+.note-node {
+    position:absolute; 
+    left: 180px; 
+    height: 150px; 
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(0, 213, 255, 0.5); 
+    border-radius: 10px; 
+    display: flex; 
+    flex-direction: column;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); 
+    overflow: hidden; 
+    backdrop-filter: blur(15px);
+}
+.note-node:focus-within { 
+    border: 1px solid #00d5ff; 
+    box-shadow: 0 0 15px rgba(0,213,255,0.2); }
+.note-header {
+    height: 15px; 
+    background: rgba(0,213,255,0.15); 
+    cursor: grab; 
+    width: 100%; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.note-header:active { cursor: grabbing; }
+.note-text {
+    flex-grow: 1; 
+    background: transparent; 
+    border: none; 
+    color: #e0e1dd; 
+    padding: 10px; 
+    resize: none;
+    font-family: 'SF Pro Text', sans-serif; 
+    font-size: 12px; outline: none; 
+    line-height: 1.4;
+}
+.note-actions {
+    position: absolute; 
+    top: -3px; 
+    right: 5px; 
+    display: flex; 
+    gap: 8px;
+}
+.note-action-btn {
+    font-size: 13px; 
+    color: #00d5ff; 
+    cursor: pointer; 
+    font-weight: bold;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+.note-action-btn:hover {
+    opacity: 1;
+}

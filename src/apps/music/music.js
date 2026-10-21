@@ -1,3 +1,4 @@
+
 const PRELOADED_TRACKS = [
     { title: "Track 01", artist: "Lexi Audio", file: "./public/assets/music/song1.mp3" },
     { title: "Track 02", artist: "Lexi Audio", file: "./public/assets/music/song2.mp3" },
@@ -8,17 +9,6 @@ const PRELOADED_TRACKS = [
     { title: "Track 07", artist: "Lexi Audio", file: "./public/assets/music/song7.mp3" },
     { title: "Track 08", artist: "Lexi Audio", file: "./public/assets/music/song8.mp3" },
     { title: "Track 09", artist: "Lexi Audio", file: "./public/assets/music/song9.mp3" },
-    { title: "Track 10", artist: "Lexi Audio", file: "./public/assets/music/song10.mp3" },
-    { title: "Track 11", artist: "Lexi Audio", file: "./public/assets/music/song11.mp3" },
-    { title: "Track 12", artist: "Lexi Audio", file: "./public/assets/music/song12.mp3" },
-    { title: "Track 13", artist: "Lexi Audio", file: "./public/assets/music/song13.mp3" },
-    { title: "Track 14", artist: "Lexi Audio", file: "./public/assets/music/song14.mp3" },
-    { title: "Track 15", artist: "Lexi Audio", file: "./public/assets/music/song15.mp3" },
-    { title: "Track 16", artist: "Lexi Audio", file: "./public/assets/music/song16.mp3" },
-    { title: "Track 17", artist: "Lexi Audio", file: "./public/assets/music/song17.mp3" },
-    { title: "Track 18", artist: "Lexi Audio", file: "./public/assets/music/song18.mp3" },
-    { title: "Track 19", artist: "Lexi Audio", file: "./public/assets/music/song19.mp3" },
-    { title: "Track 20", artist: "Lexi Audio", file: "./public/assets/music/song20.mp3" }
 ];
 
 function getMusicHTML() {
@@ -31,22 +21,16 @@ function getMusicHTML() {
 
     return `
         <div class="music-wrapper">
-            
-            <!-- Now Playing Profile -->
             <div class="music-profile">
                 <div class="music-art">🎵</div>
                 <h2 class="music-title">No Track Loaded</h2>
                 <div class="music-artist">Queue is empty</div>
             </div>
-
-            <!-- Track Timeline -->
             <div class="music-timeline">
                 <span class="music-time-current">0:00</span>
                 <input type="range" class="music-progress-bar" value="0" step="0.1" oninput="seekTrack(this)">
                 <span class="music-time-total">0:00</span>
             </div>
-            
-            <!-- Playback Controls -->
             <div class="music-controls">
                 <button class="music-action-btn" title="Previous Track" onclick="skipTrack(this, -1)">⏮</button>
                 <button class="music-action-btn" title="Rewind 10s" onclick="seekOffset(this.closest('.music-wrapper'), -10)">⏳</button>
@@ -54,55 +38,28 @@ function getMusicHTML() {
                 <button class="music-action-btn" title="Forward 10s" onclick="seekOffset(this.closest('.music-wrapper'), 10)">⌛</button>
                 <button class="music-action-btn" title="Next Track" onclick="skipTrack(this, 1)">⏭</button>
             </div>
-
-            <!-- Dynamic Playlist & Library Area -->
             <div class="music-playlist-area">
                 <div class="music-grid">
-                    
-                    <!-- 1. Local Upload Button -->
                     <label class="music-card local-upload" style="cursor: pointer;">
                         <div class="music-card-title">Local Audio</div>
                         <div class="music-card-content">📁 Add to Queue</div>
                         <input type="file" accept="audio/*" multiple style="display:none;" onchange="loadLocalFile(event, this)">
                     </label>
-
-                    <!-- 2. The NEW Folder Button -->
                     <div class="music-card" style="border-color: #20a4f3; cursor: pointer;" onclick="toggleLibrary(this)">
                         <div class="music-card-title" style="color: #20a4f3;">Library</div>
                         <div class="music-card-content"> 🎵 View Pre-loaded</div>
                     </div>
-
-                    <!-- 3. The dynamic queue injects here -->
                     <div class="dynamic-queue-container" style="display: contents;"></div>
-                    
-                    <!-- 4. Pre-loaded Library (Hidden by default) -->
                     <div class="preloaded-library-container" style="display: none;">
                         ${libraryHTML}
                     </div>
                 </div>
             </div>
-
-            <!-- Dual Audio Engines -->
             <audio class="engine-a" style="display:none;"></audio>
             <audio class="engine-b" style="display:none;"></audio>
         </div>
     `;
 }
-
-function toggleLibrary(btn) {
-    const wrapper = btn.closest('.music-wrapper');
-    const container = wrapper.querySelector('.preloaded-library-container');
-    const textElement = btn.querySelector('.music-card-content');
-    
-    if (container.style.display === 'none') {
-        container.style.display = 'contents'; 
-        textElement.innerText = '📂 Hide Tracks';
-    } else {
-        container.style.display = 'none';
-        textElement.innerText = '📂 View Pre-loaded';
-    }
-}
-
 
 function formatTime(seconds) {
     if (isNaN(seconds)) return "0:00";
@@ -120,20 +77,24 @@ function getMusicState(wrapper) {
             fadeTimer: null
         };
         
-        const engineA = wrapper.querySelector('.engine-a');
-        const engineB = wrapper.querySelector('.engine-b');
+        const y = wrapper.querySelector('.engine-a');
+        const x = wrapper.querySelector('.engine-b');
 
-        engineA.addEventListener('timeupdate', function() {
+        y.addEventListener('timeupdate', function() {
             updateTimeline(wrapper, this);
-            checkCrossfade(wrapper, this, engineB);
+            checkCrossfade(wrapper, this, x
+    
+            );
         });
         
-        engineB.addEventListener('timeupdate', function() {
+        x.addEventListener('timeupdate', function() {
             updateTimeline(wrapper, this);
-            checkCrossfade(wrapper, this, engineA);
+            checkCrossfade(wrapper, this, y
+    
+            );
         });
-        engineA.addEventListener('ended', () => handleTrackEnd(wrapper));
-        engineB.addEventListener('ended', () => handleTrackEnd(wrapper));
+        y.addEventListener('ended', () => handleTrackEnd(wrapper));
+        x.addEventListener('ended', () => handleTrackEnd(wrapper));
     }
     return wrapper.musicState;
 }
@@ -187,10 +148,10 @@ function queueTrack(element, fileUrl, songName, artistName) {
     state.queue.push({ url: fileUrl, title: songName, artist: artistName });
     renderQueue(wrapper);
     
-    const engineA = wrapper.querySelector('.engine-a');
-    const engineB = wrapper.querySelector('.engine-b');
+    const audioA = wrapper.querySelector('.engine-a');
+    const audioX = wrapper.querySelector('.engine-b');
     
-    if (engineA.paused && engineB.paused && !state.isFading) {
+    if (audioA.paused && audioX.paused && !state.isFading) {
         playNextInQueue(wrapper);
     }
 }
@@ -325,8 +286,8 @@ window.addEventListener('keydown', (e) => {
         let targetWrapper = null;
         for (const wrap of musicWrappers) {
             const audioA = wrap.querySelector('.engine-a');
-            const audioB = wrap.querySelector('.engine-b');
-            if ((audioA && !audioA.paused) || (audioB && !audioB.paused)) {
+            const audioX = wrap.querySelector('.engine-b');
+            if ((audioA && !audioA.paused) || (audioX && !audioX.paused)) {
                 targetWrapper = wrap;
                 break;
             }

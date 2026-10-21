@@ -195,6 +195,7 @@
 
 .music-progress-bar {
     flex-grow: 1;
+    appearance: none;
     -webkit-appearance: none;
     background: transparent;
     cursor: pointer;
@@ -215,7 +216,7 @@
     width: 12px;
     border-radius: 50%;
     background: #00d5ff;
-    margin-top: -4px; /* Centers the thumb on the track */
+    margin-top: -4px; 
     box-shadow: 0 0 10px rgba(0, 213, 255, 0.5);
     transition: transform 0.1s;
 }

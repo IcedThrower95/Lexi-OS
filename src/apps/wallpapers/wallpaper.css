@@ -1,0 +1,80 @@
+.window:has(.wallpapers-wrapper) {
+    background: rgba(0, 0, 0, 0.2) !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: rgba(0, 0, 0, 0.918)!important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; 
+}
+.window:has(.wallpapers-wrapper) .window-header {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+.wallpapers-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+}
+
+.wallpapers-header-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.wallpaper-upload-btn {
+    display: block;
+    background: rgba(0, 213, 255, 0.15);
+    border: 1px dashed #00d5ff;
+    color: #00d5ff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.wallpaper-upload-btn:hover {
+    background: rgba(0, 213, 255, 0.3);
+}
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.wallpaper-thumb {
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border 0.2s;
+}
+
+.wallpaper-thumb:hover {
+    transform: scale(1.05);
+    border: 2px solid #00d5ff;
+}
+
+.wallpaper-label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    padding: 4px 0;
+    backdrop-filter: blur(5px);
+}
