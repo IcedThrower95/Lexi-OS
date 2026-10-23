@@ -1,0 +1,171 @@
+.top-bar {
+    position: absolute; top: 0; left: 0; width: 100%; height: 28px;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 15px; 
+    box-sizing: border-box; 
+    font-size: 12px; 
+    color: #e0e1dd; 
+    z-index: 99999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.top-bar-left, .top-bar-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+.top-bar-logo { 
+    font-weight: 700; 
+    cursor: pointer; 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    transition: background 0.2s;
+}
+.top-bar-logo:hover { 
+    background: rgba(0, 213, 255, 0.15); 
+}
+.top-bar-app { 
+    font-weight: 600; 
+    color: #00d5ff; 
+}
+.top-bar-icon { 
+    font-size: 10px; 
+    opacity: 0.8; 
+}
+
+.desktop-widgets {
+    position: absolute; 
+    top: 50px; 
+    right: 20px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    z-index: 1;
+}
+.os-widget {
+    background: transparent;
+    backdrop-filter: blur(2px); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px; 
+    padding: 20px; 
+    width: 200px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.analog-clock {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; 
+    margin-bottom: 15px; 
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+.hand { 
+    position: absolute; 
+    bottom: 50%; 
+    left: 50%; 
+    transform-origin: bottom center; 
+    border-radius: 4px; 
+    transform: translateX(-50%); 
+}
+.hour-hand { 
+    width: 4px; 
+    height: 35px; 
+    background: #ffffff; 
+}
+.minute-hand { 
+    width: 3px; 
+    height: 50px; 
+    background: #ff0000; 
+}
+.second-hand { 
+    width: 2px; 
+    height: 55px; 
+    background: #00d5ff; 
+}
+.clock-center {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 8px; 
+    height: 8px; 
+    background: #00d5ff; 
+    border-radius: 50%; 
+    transform: translate(-50%, -50%);
+}
+.digital-time-widget { 
+    font-family: monospace; 
+    font-size: 13px; 
+    color: #00d5ff; 
+    letter-spacing: 1px; 
+}
+
+.calendar-header { 
+    font-weight: 700; 
+    font-size: 13px; 
+    margin-bottom: 15px; 
+    color: #00d5ff; 
+}
+.calendar-days-header {
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    width: 100%; 
+    text-align: center; 
+    font-size: 10px; 
+    color: #00d5ff; 
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+.calendar-grid { 
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    width: 100%; gap: 5px; 
+    text-align: center; 
+    font-size: 11px; 
+    color: #00d5ff; 
+}
+.cal-day { 
+    padding: 4px 0; 
+    border-radius: 4px; 
+}
+.cal-day.active {
+     background: #00d5ff; 
+     color: #fff; 
+     font-weight: bold; 
+     box-shadow: 0 0 10px rgba(0, 213, 255, 0.4); 
+}
+.cal-day.empty { opacity: 0; }
+
+.calendar-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    font-weight: 700; 
+    font-size: 13px; 
+    margin-bottom: 15px; 
+    color:#00d5ff;
+}
+.cal-nav {
+    cursor: pointer;
+    color: #8da9c4;
+    padding: 0 5px;
+    font-size: 16px;
+    user-select: none;
+    transition: color 0.2s;
+}
+.cal-nav:hover {
+    color: #48e0ff; 
+}
+.calendar-days-header {
+    display: grid; grid-template-columns: repeat(7, 1fr); width: 100%; 
+    text-align: center; font-size: 10px; color: #b49bba; margin-bottom: 10px; font-weight: bold;
+}
