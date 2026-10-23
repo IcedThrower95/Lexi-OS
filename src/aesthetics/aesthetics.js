@@ -115,7 +115,6 @@ function updateSystemTime() {
         secHand.style.transform = `translateX(-50%) rotate(${secAngle}deg)`;
     }
 }
-
 function renderCalendar() {
     const now = new Date();
     const actualToday = now.getDate();
@@ -134,18 +133,15 @@ function renderCalendar() {
     const firstDay = new Date(currentViewYear, currentViewMonth, 1).getDay();
     const daysInMonth = new Date(currentViewYear, currentViewMonth + 1, 0).getDate();
     
-    // Create empty slots for calendar alignment
     let fragments = '';
     for (let i = 0; i < firstDay; i++) {
-        fragments += `<div class="cal-day empty"></div>`; // Removed the visual '0' text for clean alignment
+        fragments += `<div class="cal-day empty"></div>`;
     }
     
     for (let day = 1; day <= daysInMonth; day++) {
-        const isToday = (day === actualToday && currentViewMonth === actualMonth && currentViewYear === actualYear) ? 'active' : '';
-        fragments += `<div class="cal-day ${isToday}">${day}</div>`;
+        const Today = (day === actualToday && currentViewMonth === actualMonth && currentViewYear === actualYear) ? 'active' : '';
+        fragments += `<div class="cal-day ${Today}">${day}</div>`;
     }
-    
     gridEl.innerHTML = fragments;
 }
-
 document.addEventListener('DOMContentLoaded', injectAesthetics);
