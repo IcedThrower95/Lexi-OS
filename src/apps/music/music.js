@@ -1,14 +1,14 @@
 
 const PRELOADED_TRACKS = [
-    { title: "Track 01", artist: "Lexi Audio", file: "./public/assets/music/Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez) [Official Video].mp3" },
-    { title: "Track 02", artist: "Lexi Audio", file: "./public/assets/music/Chris Stapleton - Bad As I Used To Be (From F1® The Movie) [Official Visualizer].mp3" },
-    { title: "Track 03", artist: "Lexi Audio", file: "./public/assets/music/Lady Gaga, Bruno Mars - Die With A Smile (Lyrics).mp3" },
-    { title: "Track 04", artist: "Lexi Audio", file: "./public/assets/music/Malcolm Todd - 4me 4me (Lyrics).mp3" },
-    { title: "Track 05", artist: "Lexi Audio", file: "./public/assets/music/Steve Lacy - Dark Red (Lyrics).mp3" },
-    { title: "Track 06", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - Loser (Official Video).mp3" },
-    { title: "Track 07", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - One More Hour (Official Audio).mp3" },
-    { title: "Track 08", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - The Less I Know The Better (Audio).mp3" },
-    { title: "Track 09", artist: "Lexi Audio", file: "./public/assets/music/Under Your Spell (Instrumental - Sped Up) - ASCEND - Topic (192k).mp3" },
+    { title: "Track 01", artist: "Charlie Puth feat.Selena Gomez", file: "./public/assets/music/Charlie Puth.mp3" },
+    { title: "Track 02", artist: "Chris Stapleton", file: "./public/assets/music/Chris Stapleton - Bad As I Used To Be (From F1® The Movie) [Official Visualizer].mp3" },
+    { title: "Track 03", artist: "Lady Gaga and Bruno Mars", file: "./public/assets/music/Lady Gaga, Bruno Mars - Die With A Smile (Lyrics).mp3" },
+    { title: "Track 04", artist: "Malcomm Todd", file: "./public/assets/music/Malcolm Todd - 4me 4me (Lyrics).mp3" },
+    { title: "Track 05", artist: "Steve Lacy", file: "./public/assets/music/Steve Lacy - Dark Red (Lyrics).mp3" },
+    { title: "Track 06", artist: "Tame Impala", file: "./public/assets/music/Tame Impala - Loser (Official Video).mp3" },
+    { title: "Track 07", artist: "Tame Impala", file: "./public/assets/music/Tame Impala - One More Hour (Official Audio).mp3" },
+    { title: "Track 08", artist: "TameImpala", file: "./public/assets/music/Tame Impala - The Less I Know The Better (Audio).mp3" },
+    { title: "Track 09", artist: "Random", file: "./public/assets/music/Under Your Spell (Instrumental - Sped Up) - ASCEND - Topic (192k).mp3" },
 ];
 
 function getMusicHTML() {
@@ -60,7 +60,17 @@ function getMusicHTML() {
         </div>
     `;
 }
-
+function toggleLibrary(btn) {
+    const wrapper = btn.closest('.music-wrapper');
+    const libraryContainer = wrapper.querySelector('.preloaded-library-container');
+    
+    if (libraryContainer.style.display === 'none') 
+        {
+        libraryContainer.style.display = 'contents'; 
+    } else {
+        libraryContainer.style.display = 'none';
+    }
+}
 function formatTime(seconds) {
     if (isNaN(seconds)) return "0:00";
     const mins = Math.floor(seconds / 60);

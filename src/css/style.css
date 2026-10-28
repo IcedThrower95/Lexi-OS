@@ -67,7 +67,7 @@ body {
 
 .loader-title {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-start;
   white-space: nowrap;
   overflow: hidden;
@@ -76,6 +76,7 @@ body {
   line-height: 1.1;
   font-weight: 900;
   letter-spacing: -0.05em;
+  gap: 0.15em;
 }
 
 .loader-title span {
@@ -225,10 +226,6 @@ body {
 .dot-min { background: #ffbd2e; }
 .dot-max { background: #28c940; }
 
-.window {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1), opacity 0.3s ease, width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
-}
-
 .window.maximized {
     top: 25px !important;
     left: 0 !important;
@@ -245,6 +242,8 @@ body {
 }
 
 .window {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1), opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+    
     position: absolute;
     width: 550px;
     border-radius: 16px;
@@ -252,12 +251,10 @@ body {
     flex-direction: column;
     overflow: hidden;
     
-
     background: rgba(20, 25, 35, 0.55);
     backdrop-filter: blur(40px) saturate(150%);
     -webkit-backdrop-filter: blur(40px) saturate(150%);
     
-
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     
@@ -325,4 +322,11 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
 }
-
+.boot-logo {
+  height: 0.85em;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  animation: pulse-glow 2s infinite alternate ease-in-out;
+}

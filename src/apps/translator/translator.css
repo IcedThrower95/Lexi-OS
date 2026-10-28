@@ -69,3 +69,7 @@
 .translate-btn:active { 
     transform: scale(0.98); 
 }
+select option {
+    background-color: #141923; 
+    color: #ffffff; 
+}
