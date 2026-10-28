@@ -101,12 +101,31 @@
     border-radius: 50%; 
     transform: translate(-50%, -50%);
 }
-.digital-time-widget { 
+.digital-time-hour  { 
     font-family: monospace; 
-    font-size: 13px; 
-    color: #00d5ff; 
-    letter-spacing: 1px; 
+    font-size: 20px; 
+    color: #ffffff; 
+    letter-spacing: 2px; 
 }
+.digital-time-minute  { 
+    font-family: monospace; 
+    font-size: 20px; 
+    color: #ff0000; 
+    letter-spacing: 2px; 
+}
+.digital-time-sec  { 
+    font-family: monospace; 
+    font-size: 20px; 
+    color: #00d5ff; 
+    letter-spacing: 2px; 
+}
+.digital-ampm { 
+    font-family: monospace; 
+    font-size: 20px; 
+    color: #ffffff; 
+    letter-spacing: 1; 
+}
+
 
 .calendar-header { 
     font-weight: 700; 
@@ -119,7 +138,7 @@
     grid-template-columns: repeat(7, 1fr); 
     width: 100%; 
     text-align: center; 
-    font-size: 10px; 
+    font-size: 15px; 
     color: #00d5ff; 
     margin-bottom: 10px; 
     font-weight: bold;
@@ -150,7 +169,7 @@
     align-items: center; 
     width: 100%;
     font-weight: 700; 
-    font-size: 13px; 
+    font-size: 15px; 
     margin-bottom: 15px; 
     color:#00d5ff;
 }

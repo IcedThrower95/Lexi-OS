@@ -1,14 +1,14 @@
 
 const PRELOADED_TRACKS = [
-    { title: "Track 01", artist: "Lexi Audio", file: "./public/assets/music/song1.mp3" },
-    { title: "Track 02", artist: "Lexi Audio", file: "./public/assets/music/song2.mp3" },
-    { title: "Track 03", artist: "Lexi Audio", file: "./public/assets/music/song3.mp3" },
-    { title: "Track 04", artist: "Lexi Audio", file: "./public/assets/music/song4.mp3" },
-    { title: "Track 05", artist: "Lexi Audio", file: "./public/assets/music/song5.mp3" },
-    { title: "Track 06", artist: "Lexi Audio", file: "./public/assets/music/song6.mp3" },
-    { title: "Track 07", artist: "Lexi Audio", file: "./public/assets/music/song7.mp3" },
-    { title: "Track 08", artist: "Lexi Audio", file: "./public/assets/music/song8.mp3" },
-    { title: "Track 09", artist: "Lexi Audio", file: "./public/assets/music/song9.mp3" },
+    { title: "Track 01", artist: "Lexi Audio", file: "./public/assets/music/Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez) [Official Video].mp3" },
+    { title: "Track 02", artist: "Lexi Audio", file: "./public/assets/music/Chris Stapleton - Bad As I Used To Be (From F1® The Movie) [Official Visualizer].mp3" },
+    { title: "Track 03", artist: "Lexi Audio", file: "./public/assets/music/Lady Gaga, Bruno Mars - Die With A Smile (Lyrics).mp3" },
+    { title: "Track 04", artist: "Lexi Audio", file: "./public/assets/music/Malcolm Todd - 4me 4me (Lyrics).mp3" },
+    { title: "Track 05", artist: "Lexi Audio", file: "./public/assets/music/Steve Lacy - Dark Red (Lyrics).mp3" },
+    { title: "Track 06", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - Loser (Official Video).mp3" },
+    { title: "Track 07", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - One More Hour (Official Audio).mp3" },
+    { title: "Track 08", artist: "Lexi Audio", file: "./public/assets/music/Tame Impala - The Less I Know The Better (Audio).mp3" },
+    { title: "Track 09", artist: "Lexi Audio", file: "./public/assets/music/Under Your Spell (Instrumental - Sped Up) - ASCEND - Topic (192k).mp3" },
 ];
 
 function getMusicHTML() {

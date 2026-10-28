@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lexi OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800;900&family=Inter:wght@400;700;900&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/apps/calculator/calculator.css">
     <link rel="stylesheet" href="./src/apps/aboutme/aboutme.css">
@@ -16,63 +20,72 @@
     <link rel="stylesheet" href="./src/aesthetics/aesthetics.css">
 </head>
 <body>
-    <div id="boot-screen">
-        <h1 class="lexi-text">LEXI OS</h1>
-        <p class="os-text">SYSTEM INITIATING...</p>
-    </div>
+    <DIV class=loader>
+        <div class='loader-inner'>
+            <div class="loader-top">
+                <span id=loaderPercent>00%</span>
+            </div>
+        
+            <div class="loader-title">
+                <span class="loader-title2">LEXI&nbsp;</span><span class="loader-title1">OS </span>
+            </div>
+            <div class="loader-line"><div class='loader-line-inner'></div></div>
+        </div>
+        <div class="loader-status">
+            <span class="status-dot"></span>
+            <span>Initialising your favourite OS...</span>
+        </div>
+    </DIV>
     <div id="desktop">
         <div class="dock">
             <div class="app-container">
                 <div class="dock-app app-navy" data-action="browser">
-                    <img src="./public/assets/icons/browser.svg" alt="Browser">
+                    <img src="./public/assets/icons/Browser.svg" alt="Browser">
                 </div>
                 <span class="app-label">Browser</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-teal" data-action="music">
-                    <img src="./public/assets/icons/music.svg" alt="music">
+                    <img src="./public/assets/icons/Music.svg" alt="music">
                 </div>
                 <span class="app-label">Music</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-blue" data-action="wallpapers">
-                    <img src="./public/assets/icons/weather.svg" alt="Wallpapers">
+                    <img src="./public/assets/icons/Wallpapers.svg" alt="Wallpapers">
                 </div>
                 <span class="app-label">Wallpapers</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-teal" data-action="calculator">
-                    <img src="./public/assets/icons/calculator.svg" alt="Calculator">
+                    <img src="./public/assets/icons/Calculator.svg" alt="Calculator">
                 </div>
                 <span class="app-label">Calculator</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-navy" data-action="translator">
-                    <img src="./public/assets/icons/settings.svg" alt="Translator">
+                    <img src="./public/assets/icons/Translator.svg" alt="Translator">
                 </div>
                 <span class="app-label">Translator</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-teal" data-action="notes">
-                    <img src="./public/assets/icons/calculator.svg" alt="Notes">
+                    <img src="./public/assets/icons/Notes Visualizer.svg" alt="Notes">
                 </div>
                 <span class="app-label">Notes Visualizer</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-navy" data-action="aboutme">
-                    <img src="./public/assets/icons/phone.svg" alt="About Me">
+                    <img src="./public/assets/icons/About Me.svg" alt="About Me">
                 </div>
                 <span class="app-label">About Me</span>
             </div>
             <div class="app-container">
                 <div class="dock-app app-navy" data-action="currencyconverter">
-                    <img src="./public/assets/icons/mail.svg" alt="Currency Converter">
+                    <img src="./public/assets/icons/Currency Converter.svg" alt="Currency Converter">
                 </div>
                 <span class="app-label">Currency Converter</span>
             </div>
-            <div class="dock-divider"></div>
-            <div class="dock-clock" id="dock-time">--:--</div>
-        </div>
     </div>
     <script src="./src/js/script.js"></script>
     <script src="./src/apps/calculator/calculator.js"></script>

@@ -51,7 +51,7 @@ function injectAesthetics() {
                 <div class="hand second-hand" id="sec-hand"></div>
                 <div class="clock-center"></div>
             </div>
-            <div class="digital-time-widget" id="widget-digital-time">--:--:--</div>
+            <div class="digital-clock" id="widget-digital-time"></div>
         </div>
         <div class="os-widget" id="calendar-widget-container" onwheel="handleCalendarScroll(event)">
             <div class="calendar-header">
@@ -99,7 +99,9 @@ function updateSystemTime() {
     if(topTime) topTime.innerText = timeString;
     if(topDate) topDate.innerText = dateString;
     if(dockTime) dockTime.innerText = timeString;
-    if(widgetTime) widgetTime.innerText = fullTimeString;
+    if(widgetTime) { widgetTime.innerHTML = 
+        `<span class="digital-time-hour">${pad(displayHours)}</span>:<span class="digital-time-minute">${pad(minutes)}</span>:<span class="digital-time-sec">${pad(seconds)}</span>&nbsp;<span class="digital-ampm">${ampm}</span>`;
+    }
     
     const hrHand = document.getElementById('hour-hand');
     const minHand = document.getElementById('min-hand');

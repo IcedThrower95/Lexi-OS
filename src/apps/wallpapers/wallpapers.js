@@ -15,14 +15,10 @@ function getWallpapersHTML() {
     return `
         <div class="wallpapers-wrapper">
             <div class="wallpapers-header-text">System Wallpapers</div>
-            
-            <!-- Local Upload Button -->
             <label class="wallpaper-upload-btn">
-                <span>📁 Upload Custom Background</span>
+                <span>Upload Custom Background</span>
                 <input type="file" accept="image/*" style="display:none;" onchange="loadLocalWallpaper(event)">
             </label>
-
-            <!-- Pre-loaded Grid -->
             <div class="wallpaper-grid">
                 ${gridHTML}
             </div>
