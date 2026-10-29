@@ -39,6 +39,10 @@
 
    - Browser - An app that links to Google (don't have enough experience to build a browser in an environment yet.
      <img width="2502" height="1392" alt="image" src="https://github.com/user-attachments/assets/0f75d51a-342c-4fb5-8b64-79a14a43a63b" />
+ 
+   - WallPapers - An app which has preloaded system wallpapers and also the power to add custom desktop wallpapers
+     <img width="2499" height="1389" alt="image" src="https://github.com/user-attachments/assets/bff15dd3-02b0-4409-be01-828f707bb7cf" />
+
 
 - Tech Stack:
     - Programming Languages - HTML ,CSS, JAVASCRIPT
