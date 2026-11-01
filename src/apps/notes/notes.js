@@ -51,6 +51,7 @@ function dragNote(e, noteEl) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         let newTop = noteEl.offsetTop - pos2;
+        
         let newLeft = noteEl.offsetLeft - pos1;
         noteEl.style.top = (newTop > 0 ? newTop : 0) + "px";
         noteEl.style.left = (newLeft > 0 ? newLeft : 0) + "px";
