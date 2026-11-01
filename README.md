@@ -22,7 +22,7 @@
       <img width="2505" height="1391" alt="image" src="https://github.com/user-attachments/assets/e9170156-362f-4800-9d7b-c4be10fd708b" />
 
    -  Music Player - comes with 9 preloaded track and support to upload own tracks and support for tracks in queue -a special feature where it auto mixes tracks in queue one after the other
-   evrytime a preloaded track is clicked it is added in the queue which might not be visible when selecting the tracks
+   evrytime a preloaded track is clicked it is added in the queue which might not be visible when selecting the tracks - The music tracks are downloaded from youtube in .mp3
       <img width="2501" height="1391" alt="image" src="https://github.com/user-attachments/assets/3342c13e-c145-4396-9200-ba432e7b7511" />
 
    - Notes - Text editor where you can link your notes to have more reference or relationship (needs a little more work on the design part)
@@ -40,7 +40,7 @@
    - Browser - An app that links to Google (don't have enough experience to build a browser in an environment yet.
      <img width="2502" height="1392" alt="image" src="https://github.com/user-attachments/assets/0f75d51a-342c-4fb5-8b64-79a14a43a63b" />
  
-   - WallPapers - An app which has preloaded system wallpapers and also the power to add custom desktop wallpapers
+   - WallPapers - An app which has preloaded system wallpapers and also the power to add custom desktop wallpapers: The Wallpapers are downloaded from Google 
      <img width="2499" height="1389" alt="image" src="https://github.com/user-attachments/assets/bff15dd3-02b0-4409-be01-828f707bb7cf" />
 
 
